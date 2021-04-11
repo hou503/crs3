@@ -1,8 +1,6 @@
 const launch = require('./main/puppeteer');
 
-const glca = require('./config/glca');
-const gla = require('./config/gla');
-const haw = require('./config/haw');
+const hawishub = require('./config/hawishub');
 
 const resolveData = ({ datas, selector }) => datas.map(i => ({ url: i, selector }))
 
@@ -11,9 +9,7 @@ const go = async () => {
   const [ hideX ] = args;
   const tabs = 6;
   const datas = [
-    ...resolveData(gla),
-    ...resolveData(glca),
-    ...resolveData(haw),
+    ...resolveData(hawishub),
   ];
   launch(datas, hideX, tabs);
 }
